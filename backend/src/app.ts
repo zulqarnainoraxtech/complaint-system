@@ -17,9 +17,8 @@ app.get("/api/health", (_req, res) => {
 });
 
 // ── API Routes ──────────────────────────────────────────
-// Routes will be imported here once modules are completed
-// import routes from "./routes";
-// app.use("/api/v1", routes);
+import routes from "./routes";
+app.use("/api/v1", routes);
 
 // ── Error Handler (must be last) ────────────────────────
 app.use(errorHandler);
