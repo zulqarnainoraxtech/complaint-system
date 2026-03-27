@@ -23,7 +23,7 @@ export class AuthService {
         email,
         password: hashedPassword,
         name,
-        phone,
+        phone: phone ? String(phone) : undefined,
         role: role || "user",
         societyId,
       },

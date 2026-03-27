@@ -34,6 +34,8 @@ export const protect = asyncHandler(
         role: string;
       };
 
+      console.log("decoded user is ", decoded)
+
       req.user = decoded;
       next();
     } catch (error) {
