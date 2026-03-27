@@ -29,7 +29,7 @@ export class SocietyController {
   });
 
   getSocietyById = asyncHandler(async (req: Request, res: Response) => {
-    const society = await societyService.getSocietyById(req.params.id);
+    const society = await societyService.getSocietyById(req.params.id as string);
 
     return res
       .status(200)
