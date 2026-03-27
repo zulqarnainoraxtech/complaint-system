@@ -27,6 +27,13 @@ export class SocietyService {
     });
   }
 
+  async getSocietiesForDropdown() {
+    return prisma.society.findMany({
+      select: { id: true, name: true },
+      orderBy: { name: "asc" },
+    });
+  }
+
   async getSocietyById(id: string) {
     const society = await prisma.society.findUnique({
       where: { id },

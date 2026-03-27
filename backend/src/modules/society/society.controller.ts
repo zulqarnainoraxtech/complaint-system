@@ -20,6 +20,14 @@ export class SocietyController {
       .json(new ApiResponse(200, societies, "Societies fetched successfully"));
   });
 
+  getSocietiesForDropdown = asyncHandler(async (req: Request, res: Response) => {
+    const societies = await societyService.getSocietiesForDropdown();
+
+    return res
+      .status(200)
+      .json(new ApiResponse(200, societies, "Societies for dropdown fetched successfully"));
+  });
+
   getSocietyById = asyncHandler(async (req: Request, res: Response) => {
     const society = await societyService.getSocietyById(req.params.id);
 

@@ -6,6 +6,10 @@ import { protect } from "../../middlewares/auth.middleware";
 
 const router = Router();
 
+// ── Public Routes (no token needed) ─────────────────────
+router.get("/dropdown", societyController.getSocietiesForDropdown);
+
+// ── Protected Routes (token required) ───────────────────
 router.use(protect);
 
 router.post(
